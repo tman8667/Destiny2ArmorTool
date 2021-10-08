@@ -45,3 +45,11 @@ hardcore players that care a lot about perfecting their build and min/maxing
 all their stats. I am interested in making this because I am an avid player
 of Destiny 2 (of the variety I just mentioned) and so this is a fun way to create
 something cool that relates to one of my favorite video games.
+
+## User Stories
+
+- As a user, I want to add a full set of armor pieces to see what the total stats are
+- As a user, I want to add multiple sets of armor to see the combinations of stat totals that they give
+- As a user, I want to only see combinations that give >= 100 recovery
+- As a user, I want to clear all the armor pieces I've added once I'm done
+- As a user, I want to remove an armor piece if I've made a mistake in adding it
