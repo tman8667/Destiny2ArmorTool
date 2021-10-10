@@ -1,4 +1,4 @@
-# Destiny 2 Armor Build Creator
+# Destiny 2 Armor Stat Comparison Tool
 
 ## Background
 
@@ -16,9 +16,9 @@ This tool will help players achieve this.
 
 ## The Application
 
-The application will allow users to add at least 2 (but probably no more than 5 or 6 because of processing time) 
-armor pieces for each slot (head, arms, chest, legs, class item) and generate combinations of those armor 
-pieces, so they can pick the best combination of armor pieces that suits
+The application will allow users to add 1 or more sets of armor, with one
+armor piece for each slot (head, arms, chest, legs, class item) and view/compare
+the state totals, so they can pick the best combination of armor pieces that suits
 their needs. Each armor piece has six stats that appear on them:
 
 - Mobility (affects movement speed and jump height)
@@ -33,12 +33,12 @@ stat values from each armor piece are added together to give the total for each
 stat. Every 10 stat points on the total increases the effect of each stat up
 to a total of 100, above which additional stat points do not give any more effect.
 
-The application will show every stat total from each combination of armor. It is worth
+The application will show the stat total from each armor set and allows the user to compare them. It is worth
 noting that applications like this already exist and allow users to log into their 
 account and pull character data from the Destiny API, but I'll be creating my own
 version that is a little more basic and requires manual entry of armor pieces and
-stat values. The user will also be able to filter the results for instance to only
-look at combinations that have more than 70 intellect for instance.
+stat values. The user will also be able to filter the results to only compare
+specific stat values.
 
 This application would be used by Destiny 2 players, but probably mostly by
 hardcore players that care a lot about perfecting their build and min/maxing
@@ -49,7 +49,7 @@ something cool that relates to one of my favorite video games.
 ## User Stories
 
 - As a user, I want to add a full set of armor pieces to see what the total stats are
-- As a user, I want to add multiple sets of armor to see the combinations of stat totals that they give
-- As a user, I want to only see combinations that give >= 100 recovery
+- As a user, I want to add multiple sets of armor to compare their stat totals
+- As a user, I want to only compare recovery and intellect stats
 - As a user, I want to clear all the armor pieces I've added once I'm done
 - As a user, I want to remove an armor piece if I've made a mistake in adding it
