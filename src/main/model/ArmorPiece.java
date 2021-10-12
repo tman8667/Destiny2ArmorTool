@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+// Represents a single armor piece with a type and six stat values
 public class ArmorPiece {
     private String type;
     private int mobility;
@@ -25,37 +26,30 @@ public class ArmorPiece {
         this.strength = strength;
     }
 
-    // EFFECTS: returns this armor piece's type
     public String getType() {
         return type;
     }
 
-    // EFFECTS: returns this armor piece's mobility value
     public int getMobility() {
         return mobility;
     }
 
-    // EFFECTS: returns this armor piece's resilience value
     public int getResilience() {
         return resilience;
     }
 
-    // EFFECTS: returns this armor piece's recovery value
     public int getRecovery() {
         return recovery;
     }
 
-    // EFFECTS: returns this armor piece's intellect value
     public int getIntellect() {
         return intellect;
     }
 
-    // EFFECTS: returns this armor piece's discipline value
     public int getDiscipline() {
         return discipline;
     }
 
-    // EFFECTS: returns this armor piece's strength value
     public int getStrength() {
         return strength;
     }
