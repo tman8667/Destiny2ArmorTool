@@ -89,7 +89,7 @@ public class ArmorSetTest {
         testSet.addPiece(testPiece);
 
         assertTrue(testSet.clearSlot("head"));
-        assertTrue(testSet.getClassItem().isEmpty());
+        assertTrue(testSet.getHead().isEmpty());
         assertFalse(testSet.clearSlot("head"));
     }
 
@@ -100,7 +100,7 @@ public class ArmorSetTest {
         testSet.addPiece(testPiece);
 
         assertTrue(testSet.clearSlot("arms"));
-        assertTrue(testSet.getClassItem().isEmpty());
+        assertTrue(testSet.getArms().isEmpty());
         assertFalse(testSet.clearSlot("arms"));
     }
 
@@ -111,7 +111,7 @@ public class ArmorSetTest {
         testSet.addPiece(testPiece);
 
         assertTrue(testSet.clearSlot("chest"));
-        assertTrue(testSet.getClassItem().isEmpty());
+        assertTrue(testSet.getChest().isEmpty());
         assertFalse(testSet.clearSlot("chest"));
     }
 
@@ -122,7 +122,7 @@ public class ArmorSetTest {
         testSet.addPiece(testPiece);
 
         assertTrue(testSet.clearSlot("legs"));
-        assertTrue(testSet.getClassItem().isEmpty());
+        assertTrue(testSet.getLegs().isEmpty());
         assertFalse(testSet.clearSlot("legs"));
     }
 }
