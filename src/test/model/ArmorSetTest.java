@@ -21,10 +21,6 @@ public class ArmorSetTest {
         ArmorPiece validPiece2 = new ArmorPiece("class item", 0, 0, 0,
                 10, 0, 0);
         assertFalse(testSet.addPiece(validPiece2));
-
-        ArmorPiece invalidPiece = new ArmorPiece("apple", 0, 0, 0,
-                0, 0, 0);
-        assertFalse(testSet.addPiece(invalidPiece));
     }
 
     @Test
@@ -69,6 +65,28 @@ public class ArmorSetTest {
         ArmorPiece validPiece2 = new ArmorPiece("legs", 3, 17, 8,
                 10, 12, 5);
         assertFalse(testSet.addPiece(validPiece2));
+    }
+
+    @Test
+    public void testIsFull() {
+        assertFalse(testSet.isFull());
+        ArmorPiece testHead = new ArmorPiece("head", 3, 17, 8,
+                10, 12, 5);
+        testSet.addPiece(testHead);
+        assertFalse(testSet.isFull());
+        ArmorPiece testArms = new ArmorPiece("arms", 3, 17, 8,
+                10, 12, 5);
+        testSet.addPiece(testArms);
+        ArmorPiece testChest = new ArmorPiece("chest", 3, 17, 8,
+                10, 12, 5);
+        testSet.addPiece(testChest);
+        ArmorPiece testLegs = new ArmorPiece("legs", 3, 17, 8,
+                10, 12, 5);
+        testSet.addPiece(testLegs);
+        ArmorPiece testClassItem = new ArmorPiece("class item", 0, 0, 0,
+                0, 0, 0);
+        testSet.addPiece(testClassItem);
+        assertTrue(testSet.isFull());
     }
 
     @Test

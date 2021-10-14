@@ -45,6 +45,7 @@ public class ArmorSet {
         return classItem;
     }
 
+    // EFFECTS: returns true if every slot is full
     public boolean isFull() {
         return (head.size() == 1) && (arms.size() == 1) && (chest.size() == 1)
                 && (legs.size() == 1) && (classItem.size() == 1);

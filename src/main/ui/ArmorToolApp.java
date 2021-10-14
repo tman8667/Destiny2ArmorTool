@@ -21,7 +21,7 @@ public class ArmorToolApp {
     // EFFECTS: processes user input
     private void runArmorTool() {
         boolean keepGoing = true;
-        String command = null;
+        String command;
 
         init();
 
@@ -65,6 +65,8 @@ public class ArmorToolApp {
         } else if (command.equals("r")) {
             removeArmorSet();
         } else if (command.equals("c")) {
+            clearSets();
+        } else if (command.equals("l")) {
             compareSets();
         } else {
             System.out.println("The command you entered is not valid...");
@@ -91,9 +93,10 @@ public class ArmorToolApp {
         System.out.println("Successfully added set");
     }
 
+    // EFFECTS: creates a new armor piece with name and stat values given by the user
     private ArmorPiece makeNewPiece() {
         ArmorPiece newPiece;
-        ArrayList<Integer> statValues = new ArrayList<>();
+        ArrayList<Integer> statValues;
         String type = "";
         boolean nameSuccess = false;
         while (!nameSuccess) {
@@ -105,14 +108,15 @@ public class ArmorToolApp {
                 nameSuccess = true;
             }
         }
-        statValues = getStatVlues();
+        statValues = getStatValues();
         newPiece = new ArmorPiece(type, statValues.get(0), statValues.get(1), statValues.get(2), statValues.get(3),
                 statValues.get(4), statValues.get(5));
-        System.out.println("Successfully added armor piece with stat total: " + newPiece.getStatTotal());
+        System.out.println("Successfully created armor piece with stat total: " + newPiece.getStatTotal());
         return newPiece;
     }
 
-    private ArrayList<Integer> getStatVlues() {
+    // EFFECTS: gets list of stat values from the user
+    private ArrayList<Integer> getStatValues() {
         ArrayList<Integer> statValues = new ArrayList<>();
         System.out.println("\nEnter the mobility value:");
         statValues.add(Integer.parseInt(input.next()));
@@ -129,25 +133,119 @@ public class ArmorToolApp {
         return statValues;
     }
 
+    // EFFECTS: removes set with name user specifies, if it exists
     private void removeArmorSet() {
         String name;
         if (!sets.isEmpty()) {
             System.out.println("\nEnter the name of the set you wish to remove:");
             name = input.next();
             for (int i = 0; i < sets.size(); i++) {
-                if (sets.get(i).getName() == name) {
+                if (sets.get(i).getName().equals(name)) {
                     sets.remove(i);
-                    System.out.println("Successfully removed set");
+                    System.out.println("\nSuccessfully removed set");
                 } else if (i == sets.size() - 1) {
-                    System.out.println("Could not find set with that name");
+                    System.out.println("\nCould not find set with that name");
                 }
             }
+        } else {
+            System.out.println("\nThere are no sets to remove");
         }
-        System.out.println("\nThere are no sets to remove");
     }
 
-    private void compareSets() {
+    // MODIFIES: this
+    // EFFECTS: clears all the sets that have been added
+    private void clearSets() {
+        sets.clear();
+        System.out.println("Successfully cleared all sets");
+    }
 
+    // EFFECTS: list the stat totals for every set currently added
+    private void compareSets() {
+        if (!sets.isEmpty()) {
+            for (ArmorSet set : sets) {
+                int mobilityTotal = addMobility(set);
+                int resilienceTotal = addResilience(set);
+                int recoveryTotal = addRecovery(set);
+                int intellectTotal = addIntellect(set);
+                int disciplineTotal = addDiscipline(set);
+                int strengthTotal = addStrength(set);
+                System.out.println("\nStat totals for " + set.getName() + ":");
+                System.out.println("\tMobility: " + mobilityTotal);
+                System.out.println("\tResilience: " + resilienceTotal);
+                System.out.println("\tRecovery: " + recoveryTotal);
+                System.out.println("\tIntellect: " + intellectTotal);
+                System.out.println("\tDiscipline: " + disciplineTotal);
+                System.out.println("\tStrength: " + strengthTotal);
+            }
+        } else {
+            System.out.println("\nThere are no sets added");
+        }
+    }
+
+    // EFFECTS: adds all Mobility values of the set
+    private int addMobility(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getMobility();
+        total += s.getArms().get(0).getMobility();
+        total += s.getChest().get(0).getMobility();
+        total += s.getLegs().get(0).getMobility();
+        total += s.getClassItem().get(0).getMobility();
+        return total;
+    }
+
+    // EFFECTS: adds all Resilience values of the set
+    private int addResilience(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getResilience();
+        total += s.getArms().get(0).getResilience();
+        total += s.getChest().get(0).getResilience();
+        total += s.getLegs().get(0).getResilience();
+        total += s.getClassItem().get(0).getResilience();
+        return total;
+    }
+
+    // EFFECTS: adds all Recovery values of the set
+    private int addRecovery(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getRecovery();
+        total += s.getArms().get(0).getRecovery();
+        total += s.getChest().get(0).getRecovery();
+        total += s.getLegs().get(0).getRecovery();
+        total += s.getClassItem().get(0).getRecovery();
+        return total;
+    }
+
+    // EFFECTS: adds all Intellect values of the set
+    private int addIntellect(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getIntellect();
+        total += s.getArms().get(0).getIntellect();
+        total += s.getChest().get(0).getIntellect();
+        total += s.getLegs().get(0).getIntellect();
+        total += s.getClassItem().get(0).getIntellect();
+        return total;
+    }
+
+    // EFFECTS: adds all Discipline values of the set
+    private int addDiscipline(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getDiscipline();
+        total += s.getArms().get(0).getDiscipline();
+        total += s.getChest().get(0).getDiscipline();
+        total += s.getLegs().get(0).getDiscipline();
+        total += s.getClassItem().get(0).getDiscipline();
+        return total;
+    }
+
+    // EFFECTS: adds all Strength values of the set
+    private int addStrength(ArmorSet s) {
+        int total = 0;
+        total += s.getHead().get(0).getStrength();
+        total += s.getArms().get(0).getStrength();
+        total += s.getChest().get(0).getStrength();
+        total += s.getLegs().get(0).getStrength();
+        total += s.getClassItem().get(0).getStrength();
+        return total;
     }
 
     // EFFECTS: returns true if this armor's type is one of:
