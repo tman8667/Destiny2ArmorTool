@@ -31,14 +31,4 @@ public class ArmorPieceTest {
                 10, 10, 40, 14, 3, 8);
         assertEquals((10 + 10 + 40 + 14 + 3 + 8), testArmor3.getStatTotal());
     }
-
-    @Test
-    public void testIsValid() {
-        ArmorPiece testArmor = new ArmorPiece("chest",
-                10, 10, 15, 21, 3, 8);
-        assertTrue(testArmor.isValid());
-        ArmorPiece testArmor2 = new ArmorPiece("apple",
-                2, 10, 0, 19, 3, 7);
-        assertFalse(testArmor2.isValid());
-    }
 }

@@ -21,6 +21,10 @@ public class ArmorSet {
         classItem = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public ArrayList<ArmorPiece> getHead() {
         return head;
     }
@@ -41,28 +45,32 @@ public class ArmorSet {
         return classItem;
     }
 
+    public boolean isFull() {
+        return (head.size() == 1) && (arms.size() == 1) && (chest.size() == 1)
+                && (legs.size() == 1) && (classItem.size() == 1);
+    }
+
+    // REQUIRES: armor's type is one of "head", "arms", "chest", "legs", "class item"
     // MODIFIES: this
     // EFFECTS: adds given piece to this armor set if the piece is valid
     //          and the slot for that piece is not full
     //          returns true if armor is successfully added, false otherwise
     public boolean addPiece(ArmorPiece armor) {
-        if (armor.isValid()) {
-            if (armor.getType().equals("head") && head.isEmpty()) {
-                head.add(armor);
-                return true;
-            } else if (armor.getType().equals("arms") && arms.isEmpty()) {
-                arms.add(armor);
-                return true;
-            } else if (armor.getType().equals("chest") && chest.isEmpty()) {
-                chest.add(armor);
-                return true;
-            } else if (armor.getType().equals("legs") && legs.isEmpty()) {
-                legs.add(armor);
-                return true;
-            } else if (armor.getType().equals("class item") && classItem.isEmpty()) {
-                classItem.add(armor);
-                return true;
-            }
+        if (armor.getType().equals("head") && head.isEmpty()) {
+            head.add(armor);
+            return true;
+        } else if (armor.getType().equals("arms") && arms.isEmpty()) {
+            arms.add(armor);
+            return true;
+        } else if (armor.getType().equals("chest") && chest.isEmpty()) {
+            chest.add(armor);
+            return true;
+        } else if (armor.getType().equals("legs") && legs.isEmpty()) {
+            legs.add(armor);
+            return true;
+        } else if (armor.getType().equals("class item") && classItem.isEmpty()) {
+            classItem.add(armor);
+            return true;
         }
         return false;
     }

@@ -59,21 +59,4 @@ public class ArmorPiece {
         return (getMobility() + getResilience() + getRecovery() + getIntellect()
                 + getDiscipline() + getStrength());
     }
-
-    // EFFECTS: returns true if this armor's type is one of:
-    //          "head", "arms", "chest", "legs", or "class item"
-    public boolean isValid() {
-        ArrayList<String> validNames = new ArrayList<>();
-        validNames.add("head");
-        validNames.add("arms");
-        validNames.add("chest");
-        validNames.add("legs");
-        validNames.add("class item");
-
-        if (!validNames.contains(type)) {
-            return false;
-        }
-
-        return true;
-    }
 }
