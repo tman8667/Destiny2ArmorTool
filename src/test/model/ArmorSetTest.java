@@ -14,6 +14,7 @@ public class ArmorSetTest {
 
     @Test
     public void testAddPieceClassItem() {
+        assertEquals("Test Set", testSet.getName());
         ArmorPiece validPiece = new ArmorPiece("class item", 0, 0, 0,
                 0, 0, 0);
         assertTrue(testSet.addPiece(validPiece));
