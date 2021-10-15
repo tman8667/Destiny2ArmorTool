@@ -78,12 +78,15 @@ public class ArmorSetTest {
         ArmorPiece testArms = new ArmorPiece("arms", 3, 17, 8,
                 10, 12, 5);
         testSet.addPiece(testArms);
+        assertFalse(testSet.isFull());
         ArmorPiece testChest = new ArmorPiece("chest", 3, 17, 8,
                 10, 12, 5);
         testSet.addPiece(testChest);
+        assertFalse(testSet.isFull());
         ArmorPiece testLegs = new ArmorPiece("legs", 3, 17, 8,
                 10, 12, 5);
         testSet.addPiece(testLegs);
+        assertFalse(testSet.isFull());
         ArmorPiece testClassItem = new ArmorPiece("class item", 0, 0, 0,
                 0, 0, 0);
         testSet.addPiece(testClassItem);
