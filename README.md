@@ -54,3 +54,5 @@ something cool that relates to one of my favorite video games.
 - As a user, I want to remove an armor set that I've added
 - As a user, I want to clear all the armor pieces I've added once I'm done
 - As a user, I want to remove an armor piece if I've made a mistake in adding it
+- As a user, I want to save all the sets I've added to a file
+- As a user, I want to be able to load armor sets from a file, so I can continue to add more
