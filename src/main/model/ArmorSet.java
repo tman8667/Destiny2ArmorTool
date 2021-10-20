@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 // Represents a full set of five armor pieces

@@ -2,18 +2,25 @@ package ui;
 
 import model.ArmorPiece;
 import model.ArmorSet;
+import persistence.JsonReader;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 // Armor comparison tool application
 // Code adapted from TellerApp program used in lecture
 public class ArmorToolApp {
+    private static  final String JSON_STORE = "./data/testArmorSets.json";
     private ArrayList<ArmorSet> sets;
     private Scanner input;
+    private JsonReader jsonReader;
 
     // EFFECTS: Initializes sets as an empty list and runs the application
-    public ArmorToolApp() {
+    public ArmorToolApp() throws FileNotFoundException {
         sets = new ArrayList<>();
+        jsonReader = new JsonReader(JSON_STORE);
         runArmorTool();
     }
 
@@ -53,7 +60,9 @@ public class ArmorToolApp {
         System.out.println("\ta -> add an armor set");
         System.out.println("\tr -> remove an armor set");
         System.out.println("\tc -> remove all currently added sets");
-        System.out.println("\tl -> view comparison of stat totals");
+        System.out.println("\tp -> print comparison of stat totals");
+        System.out.println("\ts -> save added armor sets to file");
+        System.out.println("\tl -> load armor sets from file");
         System.out.println("\tq -> quit application");
     }
 
@@ -66,8 +75,12 @@ public class ArmorToolApp {
             removeArmorSet();
         } else if (command.equals("c")) {
             clearSets();
-        } else if (command.equals("l")) {
+        } else if (command.equals("p")) {
             compareSets();
+        } else if (command.equals("s")) {
+            saveSets();
+        } else if (command.equals("l")) {
+            loadSets();
         } else {
             System.out.println("The command you entered is not valid...");
         }
@@ -100,7 +113,7 @@ public class ArmorToolApp {
         String type = "";
         boolean nameSuccess = false;
         while (!nameSuccess) {
-            System.out.println("\nEnter the armor type you wish to add:");
+            System.out.println("\nEnter the armor type you wish to add (head, arms, chest, legs or class item):");
             type = input.next();
             if (!isValid(type)) {
                 System.out.println("\nThat is not a valid type name");
@@ -263,5 +276,20 @@ public class ArmorToolApp {
         }
 
         return true;
+    }
+
+    // EFFECTS: saves sets to file
+    private void saveSets() {
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadSets() {
+        try {
+            sets = jsonReader.read();
+            System.out.println("Loaded armor sets from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }
