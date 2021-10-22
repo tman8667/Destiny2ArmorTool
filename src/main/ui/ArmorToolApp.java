@@ -12,7 +12,7 @@ import java.util.Scanner;
 // Armor comparison tool application
 // Code adapted from TellerApp program used in lecture
 public class ArmorToolApp {
-    private static  final String JSON_STORE = "./data/testArmorSets.json";
+    private static  final String JSON_STORE = "./data/testReaderGeneralSets.json";
     private ArrayList<ArmorSet> sets;
     private Scanner input;
     private JsonReader jsonReader;
