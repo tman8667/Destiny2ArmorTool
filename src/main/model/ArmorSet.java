@@ -1,12 +1,13 @@
 package model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
 
 import java.util.ArrayList;
 
 // Represents a full set of five armor pieces
-public class ArmorSet {
+public class ArmorSet implements Writable {
     private String name;
     private ArrayList<ArmorPiece> head;
     private ArrayList<ArmorPiece> arms;
@@ -101,5 +102,24 @@ public class ArmorSet {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("pieces", piecesToJson());
+        return  json;
+    }
+
+    // EFFECTS: returns all the pieces of this set as a JSON array
+    private JSONArray piecesToJson() {
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(getHead().get(0).toJson());
+        jsonArray.put(getArms().get(0).toJson());
+        jsonArray.put(getChest().get(0).toJson());
+        jsonArray.put(getLegs().get(0).toJson());
+        jsonArray.put(getClassItem().get(0).toJson());
+        return  jsonArray;
     }
 }

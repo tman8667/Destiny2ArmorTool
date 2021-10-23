@@ -3,6 +3,7 @@ package ui;
 import model.ArmorPiece;
 import model.ArmorSet;
 import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,16 +12,19 @@ import java.util.Scanner;
 
 // Armor comparison tool application
 // Code adapted from TellerApp program used in lecture
+// File saving/loading code adapted from JsonSerializationDemo project
 public class ArmorToolApp {
-    private static  final String JSON_STORE = "./data/testReaderGeneralSets.json";
+    private static  final String JSON_STORE = "./data/sets.json";
     private ArrayList<ArmorSet> sets;
     private Scanner input;
     private JsonReader jsonReader;
+    private JsonWriter jsonWriter;
 
     // EFFECTS: Initializes sets as an empty list and runs the application
     public ArmorToolApp() throws FileNotFoundException {
         sets = new ArrayList<>();
         jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
         runArmorTool();
     }
 
@@ -280,6 +284,14 @@ public class ArmorToolApp {
 
     // EFFECTS: saves sets to file
     private void saveSets() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(sets);
+            jsonWriter.close();
+            System.out.println("Saved all sets to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
 
     // MODIFIES: this

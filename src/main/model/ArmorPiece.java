@@ -1,9 +1,12 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 // Represents a single armor piece with a type and six stat values
-public class ArmorPiece {
+public class ArmorPiece implements Writable {
     private String type;
     private int mobility;
     private int resilience;
@@ -58,5 +61,18 @@ public class ArmorPiece {
     public int getStatTotal() {
         return (getMobility() + getResilience() + getRecovery() + getIntellect()
                 + getDiscipline() + getStrength());
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("type", type);
+        json.put("mobility", mobility);
+        json.put("resilience", resilience);
+        json.put("recovery", recovery);
+        json.put("intellect", intellect);
+        json.put("discipline", discipline);
+        json.put("strength", strength);
+        return json;
     }
 }
