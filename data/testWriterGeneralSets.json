@@ -1,0 +1,102 @@
+{"sets": [
+    {
+        "pieces": [
+            {
+                "mobility": 10,
+                "intellect": 10,
+                "strength": 10,
+                "recovery": 10,
+                "discipline": 10,
+                "type": "head",
+                "resilience": 10
+            },
+            {
+                "mobility": 10,
+                "intellect": 10,
+                "strength": 10,
+                "recovery": 10,
+                "discipline": 10,
+                "type": "arms",
+                "resilience": 10
+            },
+            {
+                "mobility": 10,
+                "intellect": 10,
+                "strength": 10,
+                "recovery": 10,
+                "discipline": 10,
+                "type": "chest",
+                "resilience": 10
+            },
+            {
+                "mobility": 10,
+                "intellect": 10,
+                "strength": 10,
+                "recovery": 10,
+                "discipline": 10,
+                "type": "legs",
+                "resilience": 10
+            },
+            {
+                "mobility": 0,
+                "intellect": 0,
+                "strength": 0,
+                "recovery": 0,
+                "discipline": 0,
+                "type": "class item",
+                "resilience": 0
+            }
+        ],
+        "name": "test set"
+    },
+    {
+        "pieces": [
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "head",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "arms",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "chest",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "legs",
+                "resilience": 12
+            },
+            {
+                "mobility": 0,
+                "intellect": 0,
+                "strength": 0,
+                "recovery": 10,
+                "discipline": 0,
+                "type": "class item",
+                "resilience": 0
+            }
+        ],
+        "name": "test set 2"
+    }
+]}
