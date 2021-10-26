@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -146,5 +148,31 @@ public class ArmorSetTest {
         assertTrue(testSet.clearSlot("legs"));
         assertTrue(testSet.getLegs().isEmpty());
         assertFalse(testSet.clearSlot("legs"));
+    }
+
+    @Test
+    public void testToJson() {
+        ArmorPiece testHead = new ArmorPiece("head", 3, 17, 8,
+                10, 12, 5);
+        JSONObject headObject = testHead.toJson();
+        testSet.addPiece(testHead);
+        ArmorPiece testArms = new ArmorPiece("arms", 3, 17, 8,
+                10, 12, 5);
+        JSONObject armsObject = testArms.toJson();
+        testSet.addPiece(testArms);
+        ArmorPiece testChest = new ArmorPiece("chest", 3, 17, 8,
+                10, 12, 5);
+        JSONObject chestObject = testHead.toJson();
+        testSet.addPiece(testChest);
+        ArmorPiece testLegs = new ArmorPiece("legs", 3, 17, 8,
+                10, 12, 5);
+        JSONObject legsObject = testHead.toJson();
+        testSet.addPiece(testLegs);
+        ArmorPiece testClassItem = new ArmorPiece("class item", 0, 0, 0,
+                0, 0, 0);
+        JSONObject classItemObject = testHead.toJson();
+        testSet.addPiece(testClassItem);
+        JSONObject json = testSet.toJson();
+        assertEquals("Test Set", json.getString("name"));
     }
 }
