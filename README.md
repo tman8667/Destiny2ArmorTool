@@ -49,10 +49,8 @@ something cool that relates to one of my favorite video games.
 ## User Stories
 
 - As a user, I want to add a full set of armor pieces to see what the total stats are
-- As a user, I want to add multiple sets of armor to compare their stat totals
-- As a user, I want to only compare recovery and intellect stats
+- As a user, I want to add multiple sets of armor to compare their stat
 - As a user, I want to remove an armor set that I've added
 - As a user, I want to clear all the armor pieces I've added once I'm done
-- As a user, I want to remove an armor piece if I've made a mistake in adding it
 - As a user, I want to save all the sets I've added to a file
 - As a user, I want to be able to load armor sets from a file, so I can continue to add more
