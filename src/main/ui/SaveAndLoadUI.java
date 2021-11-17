@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
     private static final int WIDTH = 200;
@@ -64,7 +63,9 @@ public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
             jsonWriter.open();
             jsonWriter.write(armorToolUI.getSets());
             jsonWriter.close();
-            System.out.println("Saved all sets to " + JSON_STORE);
+            JOptionPane.showMessageDialog(this, "They can now be loaded later",
+                    "Sets Successfully Saved", JOptionPane.INFORMATION_MESSAGE);
+            //armorToolUI.compareSets();
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
@@ -75,15 +76,18 @@ public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
     private void loadSets() {
         try {
             armorToolUI.setSets(jsonReader.read());
-            System.out.println("Loaded armor sets from " + JSON_STORE);
+            JOptionPane.showMessageDialog(this, "Refresh sets to see them",
+                    "Sets Successfully Loaded", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 
+
+
     // MODIFIES: this
     // EFFECTS: sets the position of this SetsDisplayUI relative to the parent component
     public void setPosition(Component parent) {
-        setLocation(20, 300);
+        setLocation(100, 600);
     }
 }

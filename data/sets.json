@@ -1,50 +1,102 @@
-{"sets": [{
-    "pieces": [
-        {
-            "mobility": 12,
-            "intellect": 12,
-            "strength": 12,
-            "recovery": 12,
-            "discipline": 12,
-            "type": "head",
-            "resilience": 12
-        },
-        {
-            "mobility": 12,
-            "intellect": 12,
-            "strength": 12,
-            "recovery": 12,
-            "discipline": 12,
-            "type": "arms",
-            "resilience": 12
-        },
-        {
-            "mobility": 12,
-            "intellect": 12,
-            "strength": 12,
-            "recovery": 12,
-            "discipline": 12,
-            "type": "chest",
-            "resilience": 12
-        },
-        {
-            "mobility": 12,
-            "intellect": 12,
-            "strength": 12,
-            "recovery": 12,
-            "discipline": 12,
-            "type": "legs",
-            "resilience": 12
-        },
-        {
-            "mobility": 0,
-            "intellect": 10,
-            "strength": 0,
-            "recovery": 0,
-            "discipline": 0,
-            "type": "class item",
-            "resilience": 0
-        }
-    ],
-    "name": "steve"
-}]}
+{"sets": [
+    {
+        "pieces": [
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "head",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "arms",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "chest",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "legs",
+                "resilience": 12
+            },
+            {
+                "mobility": 0,
+                "intellect": 10,
+                "strength": 0,
+                "recovery": 0,
+                "discipline": 0,
+                "type": "class item",
+                "resilience": 0
+            }
+        ],
+        "name": "Noble Constant Type 2"
+    },
+    {
+        "pieces": [
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "head",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 18,
+                "strength": 12,
+                "recovery": 21,
+                "discipline": 8,
+                "type": "arms",
+                "resilience": 12
+            },
+            {
+                "mobility": 12,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 12,
+                "discipline": 12,
+                "type": "chest",
+                "resilience": 12
+            },
+            {
+                "mobility": 14,
+                "intellect": 12,
+                "strength": 12,
+                "recovery": 15,
+                "discipline": 12,
+                "type": "legs",
+                "resilience": 12
+            },
+            {
+                "mobility": 2,
+                "intellect": 10,
+                "strength": 2,
+                "recovery": 2,
+                "discipline": 2,
+                "type": "class item",
+                "resilience": 2
+            }
+        ],
+        "name": "Emperor's Minister Set"
+    }
+]}
