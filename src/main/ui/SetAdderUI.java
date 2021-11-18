@@ -41,7 +41,7 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: adds components
     private void addComponents() {
-        setName = new JTextField("setName");
+        setName = new JTextField("Enter Set Name");
         setName.setPreferredSize(new Dimension(300, 50));
         setName.setFont(new Font("Arial", Font.PLAIN, 15));
         add(setName);
@@ -81,6 +81,8 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         addClassItemRow();
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds row of text fields for head stats
     private void addHeadRow() {
         thePanel.add(new JLabel("Head:"));
         addTextFields(headTextFields);
@@ -92,6 +94,8 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         thePanel.add(headTextFields.get(5));
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds row of text fields for arms stats
     private void addArmsRow() {
         thePanel.add(new JLabel("Arms:"));
         addTextFields(armsTextFields);
@@ -103,6 +107,8 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         thePanel.add(armsTextFields.get(5));
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds row of text fields for chest stats
     private void addChestRow() {
         thePanel.add(new JLabel("Chest:"));
         addTextFields(chestTextFields);
@@ -114,6 +120,8 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         thePanel.add(chestTextFields.get(5));
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds row of text fields for legs stats
     private void addLegsRow() {
         thePanel.add(new JLabel("Legs:"));
         addTextFields(legsTextFields);
@@ -125,6 +133,9 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         thePanel.add(legsTextFields.get(5));
     }
 
+
+    // MODIFIES: this
+    // EFFECTS: adds row of text fields for class item stats
     private void addClassItemRow() {
         thePanel.add(new JLabel("ClassItem:"));
         addTextFields(classItemTextFields);
@@ -136,6 +147,8 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
         thePanel.add(classItemTextFields.get(5));
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds 6 text fields to given array
     private void addTextFields(ArrayList<JTextField> textAreaList) {
         for (int i = 0; i < 6; i++) {
             textAreaList.add(new JTextField());
@@ -146,31 +159,54 @@ public class SetAdderUI extends JInternalFrame implements ActionListener {
     // EFFECTS: adds a set of armor to list of sets
     private void addArmorSet() {
         ArmorSet newSet = new ArmorSet(setName.getText());
+
+        try {
+            newSet.addPiece(makeNewPiece("head", headTextFields));
+            newSet.addPiece(makeNewPiece("arms", armsTextFields));
+            newSet.addPiece(makeNewPiece("chest", chestTextFields));
+            newSet.addPiece(makeNewPiece("legs", legsTextFields));
+            newSet.addPiece(makeNewPiece("class item", classItemTextFields));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a number in every box!",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
         armorToolUI.addSet(newSet);
-        System.out.println("Successfully added set");
+        resetAllTextFields();
+        JOptionPane.showMessageDialog(this, "Refresh sets to see it",
+                "Set Successfully Loaded", JOptionPane.INFORMATION_MESSAGE);
     }
 
     // EFFECTS: creates a new armor piece with name and stat values given by the user
-    /*private ArmorPiece makeNewPiece() {
+    private ArmorPiece makeNewPiece(String type, ArrayList<JTextField> values) throws NumberFormatException {
         ArmorPiece newPiece;
-        ArrayList<Integer> statValues;
-        String type = "";
-        boolean nameSuccess = false;
-        while (!nameSuccess) {
-            System.out.println("\nEnter the armor type you wish to add (head, arms, chest, legs or class item):");
-            type = input.next();
-            if (!isValid(type)) {
-                System.out.println("\nThat is not a valid type name");
-            } else {
-                nameSuccess = true;
-            }
-        }
-        statValues = getStatValues();
-        newPiece = new ArmorPiece(type, statValues.get(0), statValues.get(1), statValues.get(2), statValues.get(3),
-                statValues.get(4), statValues.get(5));
-        System.out.println("Successfully created armor piece with stat total: " + newPiece.getStatTotal());
+        newPiece = new ArmorPiece(type, Integer.parseInt(values.get(0).getText()),
+                Integer.parseInt(values.get(1).getText()), Integer.parseInt(values.get(2).getText()),
+                Integer.parseInt(values.get(3).getText()), Integer.parseInt(values.get(4).getText()),
+                Integer.parseInt(values.get(5).getText()));
         return newPiece;
-    }*/
+    }
+
+    // MODIFIES: this
+    // EFFECTS: resets the text in each of the text fields
+    private void resetAllTextFields() {
+        setName.setText("Enter Set Name");
+        for (JTextField jtf : headTextFields) {
+            jtf.setText("");
+        }
+        for (JTextField jtf : armsTextFields) {
+            jtf.setText("");
+        }
+        for (JTextField jtf : chestTextFields) {
+            jtf.setText("");
+        }
+        for (JTextField jtf : legsTextFields) {
+            jtf.setText("");
+        }
+        for (JTextField jtf : classItemTextFields) {
+            jtf.setText("");
+        }
+    }
 
     // EFFECTS: takes action when button is pressed
     public void actionPerformed(ActionEvent e) {

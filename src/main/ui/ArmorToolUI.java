@@ -19,6 +19,8 @@ public class ArmorToolUI extends JFrame {
 
     public ArmorToolUI() {
         setTitle("Destiny 2 Armor Comparison Tool");
+        ImageIcon appIcon = new ImageIcon("./data/AppIcon.png");
+        setIconImage(appIcon.getImage());
         sets = new ArrayList<>();
         initializeGraphics();
     }

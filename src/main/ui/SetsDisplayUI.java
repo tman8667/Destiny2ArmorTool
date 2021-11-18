@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     private static final int WIDTH = 500;
@@ -49,12 +50,21 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
         refreshSetsButton.setActionCommand("refreshSets");
         refreshSetsButton.addActionListener(this);
         add(BorderLayout.NORTH, refreshSetsButton);
+
+        JButton removeSetsButton = new JButton("Remove All Sets");
+        removeSetsButton.setActionCommand("removeSets");
+        removeSetsButton.addActionListener(this);
+        add(BorderLayout.SOUTH, removeSetsButton);
     }
 
     // EFFECTS: takes action when the buttons is pressed
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("refreshSets")) {
             displaySets();
+        } else if (e.getActionCommand().equals("removeSets")) {
+            armorToolUI.setSets(new ArrayList<>());
+            thePanel.removeAll();
+            thePanel.repaint();
         }
     }
 
