@@ -7,15 +7,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-// A class that represents an application's main window
-// Code adapted from AlarmController demo project
+// A class that represents an Armor Tool application's main window
+// Some code in this and other classes adapted from AlarmController demo project
 public class ArmorToolUI extends JFrame {
     public static final int WIDTH = 1500;
     public static final int HEIGHT = 900;
-
-    private static  final String JSON_STORE = "./data/sets.json";
     private ArrayList<ArmorSet> sets;
     private JDesktopPane desktop;
+    private SetRemoverUI setRemoverUI;
+    private SetsDisplayUI setsDisplayUI;
 
     public ArmorToolUI() {
         setTitle("Destiny 2 Armor Comparison Tool");
@@ -37,6 +37,7 @@ public class ArmorToolUI extends JFrame {
         addArmorSetViewer();
         addArmorSetAdder();
         addSaveAndLoad();
+        addSetRemover();
 
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,8 +49,8 @@ public class ArmorToolUI extends JFrame {
     // MODIFIES: this
     // EFFECTS: adds an armor set viewer window to desktop
     private void addArmorSetViewer() {
-        SetsDisplayUI setsDisplay = new SetsDisplayUI(this, this);
-        desktop.add(setsDisplay);
+        setsDisplayUI = new SetsDisplayUI(this, this);
+        desktop.add(setsDisplayUI);
     }
 
     // MODIFIES: this
@@ -66,6 +67,13 @@ public class ArmorToolUI extends JFrame {
         add(saveAndLoadUI);
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds a set remover window to desktop
+    private void addSetRemover() {
+        setRemoverUI = new SetRemoverUI(this, this);
+        add(setRemoverUI);
+    }
+
     public ArrayList<ArmorSet> getSets() {
         return this.sets;
     }
@@ -78,6 +86,33 @@ public class ArmorToolUI extends JFrame {
     // EFFECTS: adds given set to list of sets
     public void addSet(ArmorSet set) {
         sets.add(set);
+        setRemoverUI.update();
+    }
+
+    // EFFECTS: updates sets displayed in SetRemover amd SetsDisplay windows
+    public void updateSetsAdded() {
+        setRemoverUI.update();
+        setsDisplayUI.displaySets();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: removes given set to list of sets
+    public void removeSet(String name) {
+        if (!sets.isEmpty()) {
+            for (int i = 0; i <= sets.size(); i++) {
+                if (i == sets.size()) {
+                    JOptionPane.showMessageDialog(this,
+                            "Check that you entered the name correctly",
+                            "Could not find set",JOptionPane.WARNING_MESSAGE);
+                } else if (sets.get(i).getName().equals(name)) {
+                    sets.remove(i);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No sets added",
+                    "Alert",JOptionPane.WARNING_MESSAGE);
+        }
+        updateSetsAdded();
     }
 
     // MODIFIES: this

@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+// A class that represents a panel to display added sets
 public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     private static final int WIDTH = 500;
     private static final int HEIGHT = 700;
@@ -46,41 +47,31 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: adds button to refresh currently added sets
     public void addButton() {
-        JButton refreshSetsButton = new JButton("Refresh Sets");
-        refreshSetsButton.setActionCommand("refreshSets");
-        refreshSetsButton.addActionListener(this);
-        add(BorderLayout.NORTH, refreshSetsButton);
-
         JButton removeSetsButton = new JButton("Remove All Sets");
         removeSetsButton.setActionCommand("removeSets");
         removeSetsButton.addActionListener(this);
+        removeSetsButton.setBackground(Color.RED);
+        removeSetsButton.setForeground(Color.BLACK);
         add(BorderLayout.SOUTH, removeSetsButton);
     }
 
     // EFFECTS: takes action when the buttons is pressed
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("refreshSets")) {
-            displaySets();
-        } else if (e.getActionCommand().equals("removeSets")) {
+        if (e.getActionCommand().equals("removeSets")) {
             armorToolUI.setSets(new ArrayList<>());
             thePanel.removeAll();
             thePanel.repaint();
+            armorToolUI.updateSetsAdded();
         }
     }
 
     // MODIFIES: this
     // EFFECTS: displays stats for all currently added sets
-    private void displaySets() {
-        if (armorToolUI.getSets().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No sets added",
-                    "Alert",JOptionPane.WARNING_MESSAGE);
-        } else {
-            System.out.println("Refreshing sets");
-            thePanel.removeAll();
-            thePanel.repaint();
-            for (ArmorSet s : armorToolUI.getSets()) {
-                createTable(s);
-            }
+    public void displaySets() {
+        thePanel.removeAll();
+        thePanel.repaint();
+        for (ArmorSet s : armorToolUI.getSets()) {
+            createTable(s);
         }
     }
 
@@ -99,10 +90,9 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
         };
         JTable newTable = new JTable(model);
         newTable.setRowHeight(100);
-        newTable.setFont(new Font("Arial", Font.BOLD, 18));
+        newTable.setFont(new Font("Arial", Font.BOLD, 16));
         newTable.setPreferredSize(new Dimension(250, 850));
         thePanel.add(newTable);
-        System.out.println("Added set");
     }
 
     // EFFECTS: adds all Mobility values of the set

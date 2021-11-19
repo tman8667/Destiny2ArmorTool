@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+// A class that represents a panel to save/load data
 public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
     private static final int WIDTH = 200;
     private static final int HEIGHT = 100;
@@ -22,11 +23,13 @@ public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
 
 
     public SaveAndLoadUI(Component parent, ArmorToolUI armorToolUI) {
-        super("Sav/Load Data", false, false, false, false);
+        super("Save/Load Data", false, false, false, false);
         theComponent = parent;
         this.armorToolUI = armorToolUI;
+
         jsonReader = new JsonReader(JSON_STORE);
         jsonWriter = new JsonWriter(JSON_STORE);
+
         setLayout(new FlowLayout());
         setSize(WIDTH, HEIGHT);
         addButtons();
@@ -65,7 +68,6 @@ public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
             jsonWriter.close();
             JOptionPane.showMessageDialog(this, "They can now be loaded later",
                     "Sets Successfully Saved", JOptionPane.INFORMATION_MESSAGE);
-            //armorToolUI.compareSets();
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
@@ -76,6 +78,7 @@ public class SaveAndLoadUI extends JInternalFrame implements ActionListener {
     private void loadSets() {
         try {
             armorToolUI.setSets(jsonReader.read());
+            armorToolUI.updateSetsAdded();
             JOptionPane.showMessageDialog(this, "Refresh sets to see them",
                     "Sets Successfully Loaded", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException e) {

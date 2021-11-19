@@ -98,5 +98,55 @@
             }
         ],
         "name": "Emperor's Minister Set"
+    },
+    {
+        "pieces": [
+            {
+                "mobility": 1,
+                "intellect": 1,
+                "strength": 1,
+                "recovery": 1,
+                "discipline": 1,
+                "type": "head",
+                "resilience": 1
+            },
+            {
+                "mobility": 1,
+                "intellect": 1,
+                "strength": 1,
+                "recovery": 1,
+                "discipline": 1,
+                "type": "arms",
+                "resilience": 1
+            },
+            {
+                "mobility": 1,
+                "intellect": 1,
+                "strength": 1,
+                "recovery": 1,
+                "discipline": 1,
+                "type": "chest",
+                "resilience": 1
+            },
+            {
+                "mobility": 1,
+                "intellect": 1,
+                "strength": 1,
+                "recovery": 1,
+                "discipline": 1,
+                "type": "legs",
+                "resilience": 1
+            },
+            {
+                "mobility": 1,
+                "intellect": 1,
+                "strength": 1,
+                "recovery": 1,
+                "discipline": 1,
+                "type": "class item",
+                "resilience": 1
+            }
+        ],
+        "name": "Midnight Exigent"
     }
 ]}

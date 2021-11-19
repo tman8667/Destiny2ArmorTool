@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+// A class that represents a window to add new sets
 public class SetAdderUI extends JInternalFrame implements ActionListener {
     private static final int WIDTH = 800;
     private static final int HEIGHT = 500;

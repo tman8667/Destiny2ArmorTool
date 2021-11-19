@@ -2,14 +2,9 @@ package ui;
 
 import java.io.FileNotFoundException;
 
+// The main class from which the application is run
 public class Main {
     public static void main(String[] args) {
         new ArmorToolUI();
-
-        /*try {
-            new ArmorToolApp();
-        } catch (FileNotFoundException e) {
-            System.out.println("Unable to run application: file not found");
-        }*/
     }
 }
