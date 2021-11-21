@@ -1,5 +1,6 @@
 package model;
 
+import model.exceptions.LogException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -109,7 +110,7 @@ public class ArmorSet implements Writable {
         return false;
     }
 
-    // EFFECTS: logs when an armor set is removed from the application
+    // EFFECTS: logs when this armor set is removed from the application
     public void logRemoval() {
         EventLog.getInstance().logEvent(new Event("Removed set: " + getName()));
     }
