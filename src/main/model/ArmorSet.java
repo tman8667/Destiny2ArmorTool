@@ -63,18 +63,23 @@ public class ArmorSet implements Writable {
     public boolean addPiece(ArmorPiece armor) {
         if (armor.getType().equals("head") && head.isEmpty()) {
             head.add(armor);
+            EventLog.getInstance().logEvent(new Event("Armor piece added to set: " + getName()));
             return true;
         } else if (armor.getType().equals("arms") && arms.isEmpty()) {
             arms.add(armor);
+            EventLog.getInstance().logEvent(new Event("Armor piece added to set: " + getName()));
             return true;
         } else if (armor.getType().equals("chest") && chest.isEmpty()) {
             chest.add(armor);
+            EventLog.getInstance().logEvent(new Event("Armor piece added to set: " + getName()));
             return true;
         } else if (armor.getType().equals("legs") && legs.isEmpty()) {
             legs.add(armor);
+            EventLog.getInstance().logEvent(new Event("Armor piece added to set: " + getName()));
             return true;
         } else if (armor.getType().equals("class item") && classItem.isEmpty()) {
             classItem.add(armor);
+            EventLog.getInstance().logEvent(new Event("Armor piece added to set: " + getName()));
             return true;
         }
         return false;
@@ -102,6 +107,11 @@ public class ArmorSet implements Writable {
             return true;
         }
         return false;
+    }
+
+    // EFFECTS: logs when an armor set is removed from the application
+    public void logRemoval() {
+        EventLog.getInstance().logEvent(new Event("Removed set: " + getName()));
     }
 
     @Override

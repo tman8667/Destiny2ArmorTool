@@ -54,3 +54,66 @@ something cool that relates to one of my favorite video games.
 - As a user, I want to clear all the armor pieces I've added once I'm done
 - As a user, I want to save all the sets I've added to a file
 - As a user, I want to be able to load armor sets from a file, so I can continue to add more
+
+## Phase 4: Task 2
+
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Noble Constant Type 2<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Noble Constant Type 2<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Noble Constant Type 2<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Noble Constant Type 2<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 10<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Noble Constant Type 2<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Emperor's Minister Set<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 83<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Emperor's Minister Set<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 72<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Emperor's Minister Set<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 77<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Emperor's Minister Set<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 20<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Emperor's Minister Set<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 6<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Midnight Exigent<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 6<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Midnight Exigent<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 6<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Midnight Exigent<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 6<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Midnight Exigent<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece created with stat total: 6<br />
+Sun Nov 21 14:17:24 PST 2021<br />
+Armor piece added to set: Midnight Exigent<br />

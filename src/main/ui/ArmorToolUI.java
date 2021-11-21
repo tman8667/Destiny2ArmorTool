@@ -1,6 +1,8 @@
 package ui;
 
 import model.ArmorSet;
+import model.Event;
+import model.EventLog;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 
 // A class that represents an Armor Tool application's main window
 // Some code in this and other classes adapted from AlarmController demo project
-public class ArmorToolUI extends JFrame {
+public class ArmorToolUI extends JFrame implements LogPrinter {
     public static final int WIDTH = 1500;
     public static final int HEIGHT = 900;
     private ArrayList<ArmorSet> sets;
@@ -23,6 +25,13 @@ public class ArmorToolUI extends JFrame {
         setIconImage(appIcon.getImage());
         sets = new ArrayList<>();
         initializeGraphics();
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                printLog(EventLog.getInstance());
+                System.exit(0);
+            }
+        });
     }
 
     // MODIFIES: this
@@ -40,7 +49,7 @@ public class ArmorToolUI extends JFrame {
         addSetRemover();
 
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
@@ -105,6 +114,7 @@ public class ArmorToolUI extends JFrame {
                             "Check that you entered the name correctly",
                             "Could not find set",JOptionPane.WARNING_MESSAGE);
                 } else if (sets.get(i).getName().equals(name)) {
+                    sets.get(i).logRemoval();
                     sets.remove(i);
                 }
             }
@@ -113,6 +123,15 @@ public class ArmorToolUI extends JFrame {
                     "Alert",JOptionPane.WARNING_MESSAGE);
         }
         updateSetsAdded();
+    }
+
+    @Override
+    public void printLog(EventLog el) {
+        for (Event next : el) {
+            System.out.println(next.toString());
+        }
+
+        repaint();
     }
 
     // MODIFIES: this

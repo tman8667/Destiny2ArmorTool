@@ -27,6 +27,8 @@ public class ArmorPiece implements Writable {
         this.intellect = intellect;
         this.discipline = discipline;
         this.strength = strength;
+        EventLog.getInstance().logEvent(
+                new Event("Armor piece created with stat total: " + getStatTotal()));
     }
 
     public String getType() {
