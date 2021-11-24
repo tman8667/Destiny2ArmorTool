@@ -58,6 +58,9 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     // EFFECTS: takes action when the buttons is pressed
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("removeSets")) {
+            for (ArmorSet as : armorToolUI.getSets()) {
+                as.logRemoval();
+            }
             armorToolUI.setSets(new ArrayList<>());
             thePanel.removeAll();
             thePanel.repaint();

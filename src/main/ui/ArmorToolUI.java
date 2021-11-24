@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 // A class that represents an Armor Tool application's main window
 // Some code in this and other classes adapted from AlarmController demo project
+// windowListener code from user9643348 on StackOverflow: https://stackoverflow.com/a/60516801
 public class ArmorToolUI extends JFrame implements LogPrinter {
     public static final int WIDTH = 1500;
     public static final int HEIGHT = 900;
@@ -96,6 +97,7 @@ public class ArmorToolUI extends JFrame implements LogPrinter {
     public void addSet(ArmorSet set) {
         sets.add(set);
         setRemoverUI.update();
+        setsDisplayUI.displaySets();
     }
 
     // EFFECTS: updates sets displayed in SetRemover amd SetsDisplay windows

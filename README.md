@@ -57,63 +57,55 @@ something cool that relates to one of my favorite video games.
 
 ## Phase 4: Task 2
 
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Noble Constant Type 2<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Noble Constant Type 2<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Noble Constant Type 2<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Noble Constant Type 2<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 10<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Noble Constant Type 2<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Emperor's Minister Set<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 83<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Emperor's Minister Set<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 72<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Emperor's Minister Set<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 77<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Emperor's Minister Set<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 20<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Emperor's Minister Set<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 6<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Midnight Exigent<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 6<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Midnight Exigent<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 6<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Midnight Exigent<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 6<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Midnight Exigent<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece created with stat total: 6<br />
-Sun Nov 21 14:17:24 PST 2021<br />
-Armor piece added to set: Midnight Exigent<br />
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 72</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 83</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 72</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 77</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 20</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 6</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: test</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 6</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: test</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 6</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: test</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 6</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: test</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece created with stat total: 6</br>
+Wed Nov 24 11:03:54 PST 2021</br>
+Armor piece added to set: test</br>
+Wed Nov 24 11:03:58 PST 2021</br>
+Removed set: Emperor's Minister Set</br>
+Wed Nov 24 11:03:58 PST 2021</br>
+Removed set: test
+
+
+## Phase 4: Task 3
+
+- Apply single point of control by changing absolute coordinates to be relative to application window dimensions
+- Remove redundant Component variables from UI subcomponent classes
+- Abstract code for armor set stat display tables into its own class
+- Abstract repeated behavior of subcomponents into a separate parent class
