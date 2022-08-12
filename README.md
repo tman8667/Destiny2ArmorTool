@@ -18,7 +18,7 @@ This tool will help players achieve this.
 
 The application will allow users to add 1 or more sets of armor, with one
 armor piece for each slot (head, arms, chest, legs, class item) and view/compare
-the state totals, so they can pick the best combination of armor pieces that suits
+the stat totals, so they can pick the best combination of armor pieces that suits
 their needs. Each armor piece has six stats that appear on them:
 
 - Mobility (affects movement speed and jump height)
