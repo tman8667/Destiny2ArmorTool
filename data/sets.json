@@ -2,49 +2,49 @@
     {
         "pieces": [
             {
-                "mobility": 12,
-                "intellect": 12,
-                "strength": 12,
-                "recovery": 12,
-                "discipline": 12,
+                "weapons": 12,
+                "super": 12,
+                "melee": 12,
+                "class": 12,
+                "grenade": 12,
                 "type": "head",
-                "resilience": 12
+                "health": 12
             },
             {
-                "mobility": 12,
-                "intellect": 18,
-                "strength": 12,
-                "recovery": 21,
-                "discipline": 8,
+                "weapons": 12,
+                "super": 18,
+                "melee": 12,
+                "class": 21,
+                "grenade": 8,
                 "type": "arms",
-                "resilience": 12
+                "health": 12
             },
             {
-                "mobility": 12,
-                "intellect": 12,
-                "strength": 12,
-                "recovery": 12,
-                "discipline": 12,
+                "weapons": 12,
+                "super": 12,
+                "melee": 12,
+                "class": 12,
+                "grenade": 12,
                 "type": "chest",
-                "resilience": 12
+                "health": 12
             },
             {
-                "mobility": 14,
-                "intellect": 12,
-                "strength": 12,
-                "recovery": 15,
-                "discipline": 12,
+                "weapons": 14,
+                "super": 12,
+                "melee": 12,
+                "class": 15,
+                "grenade": 12,
                 "type": "legs",
-                "resilience": 12
+                "health": 12
             },
             {
-                "mobility": 2,
-                "intellect": 10,
-                "strength": 2,
-                "recovery": 2,
-                "discipline": 2,
+                "weapons": 2,
+                "super": 10,
+                "melee": 2,
+                "class": 2,
+                "grenade": 2,
                 "type": "class item",
-                "resilience": 2
+                "health": 2
             }
         ],
         "name": "Emperor's Minister Set"
@@ -52,49 +52,49 @@
     {
         "pieces": [
             {
-                "mobility": 1,
-                "intellect": 1,
-                "strength": 1,
-                "recovery": 1,
-                "discipline": 1,
+                "weapons": 1,
+                "super": 1,
+                "melee": 1,
+                "class": 1,
+                "grenade": 1,
                 "type": "head",
-                "resilience": 1
+                "health": 1
             },
             {
-                "mobility": 1,
-                "intellect": 1,
-                "strength": 1,
-                "recovery": 1,
-                "discipline": 1,
+                "weapons": 1,
+                "super": 1,
+                "melee": 1,
+                "class": 1,
+                "grenade": 1,
                 "type": "arms",
-                "resilience": 1
+                "health": 1
             },
             {
-                "mobility": 1,
-                "intellect": 1,
-                "strength": 1,
-                "recovery": 1,
-                "discipline": 1,
+                "weapons": 1,
+                "super": 1,
+                "melee": 1,
+                "class": 1,
+                "grenade": 1,
                 "type": "chest",
-                "resilience": 1
+                "health": 1
             },
             {
-                "mobility": 1,
-                "intellect": 1,
-                "strength": 1,
-                "recovery": 1,
-                "discipline": 1,
+                "weapons": 1,
+                "super": 1,
+                "melee": 1,
+                "class": 1,
+                "grenade": 1,
                 "type": "legs",
-                "resilience": 1
+                "health": 1
             },
             {
-                "mobility": 1,
-                "intellect": 1,
-                "strength": 1,
-                "recovery": 1,
-                "discipline": 1,
+                "weapons": 1,
+                "super": 1,
+                "melee": 1,
+                "class": 1,
+                "grenade": 1,
                 "type": "class item",
-                "resilience": 1
+                "health": 1
             }
         ],
         "name": "test"

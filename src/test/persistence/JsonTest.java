@@ -8,11 +8,11 @@ public class JsonTest {
     public void checkArmorPiece(String type, int mobility, int resilience, int recovery,
                                 int intellect, int discipline, int strength, ArmorPiece ap) {
         assertEquals(type, ap.getType());
-        assertEquals(mobility, ap.getMobility());
-        assertEquals(resilience, ap.getResilience());
-        assertEquals(recovery, ap.getRecovery());
-        assertEquals(intellect, ap.getIntellect());
-        assertEquals(discipline, ap.getDiscipline());
-        assertEquals(strength, ap.getStrength());
+        assertEquals(mobility, ap.getWeapons());
+        assertEquals(resilience, ap.getHealth());
+        assertEquals(recovery, ap.getClassability());
+        assertEquals(intellect, ap.getSuperability());
+        assertEquals(discipline, ap.getGrenade());
+        assertEquals(strength, ap.getMelee());
     }
 }

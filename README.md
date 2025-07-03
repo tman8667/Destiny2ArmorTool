@@ -21,17 +21,18 @@ armor piece for each slot (head, arms, chest, legs, class item) and view/compare
 the stat totals, so they can pick the best combination of armor pieces that suits
 their needs. Each armor piece has six stats that appear on them:
 
-- Mobility (affects movement speed and jump height)
-- Recovery (affects how quickly you start regenerating health)
-- Resilience (affects how much damage you take from enemy combatants or players)
-- Intellect (affects how quickly your Super ability recharges)
-- Discipline (affects how quickly your Grenade ability recharges)
-- Strength (affects how quickly your Melee ability recharges)
+- Weapons (0–100: Governs weapon reload speed, handling, and damage versus PvE minor and major combatants. 101–200: Governs ammo restored from bricks, and improves weapon damage versus Guardians and PvE bosses.)
+- Class (0–100: Governs class ability cooldowns and energy scalars. 101–200: Governs overshield strength gained upon using your class ability.)
+- Health (0–100: Governs flinch resistance and HP restored from Orbs of Power. 101–200: Governs shield capacity in PvE and shield recharge speed.)
+- Super (0–100: Governs Super energy scalars. 101–200: Governs Super damage)
+- Grenade (0–100: Governs grenade cooldowns and energy scalars. 101–200: Governs grenade damage.)
+- Melee (0–100: Governs melee ability cooldowns and energy scalars. 101–200: Governs melee damage, including uncharged melees and Glaives.)
 
 Each stat on an armor piece can have a value ranging from 0 to 40 and all the
 stat values from each armor piece are added together to give the total for each
 stat. Every 10 stat points on the total increases the effect of each stat up
-to a total of 100, above which additional stat points do not give any more effect.
+to a total of 100 for the primary effect and 200 for the secondary effect. Any points
+above 200 provides no additional effect
 
 The application will show the stat total from each armor set and allows the user to compare them. It is worth
 noting that applications like this already exist and allow users to log into their 
@@ -54,6 +55,11 @@ something cool that relates to one of my favorite video games.
 - As a user, I want to clear all the armor pieces I've added once I'm done
 - As a user, I want to save all the sets I've added to a file
 - As a user, I want to be able to load armor sets from a file, so I can continue to add more
+
+## Change Log
+- July 3, 2025: Updated backend for changes to armor stats coming with the <i>Edge of Fate</i> expansion. The icons will remain the same until the new ones are available.
+
+The following sections were only relevant to the original assignment and are only here for posterity. Please disregard.
 
 ## Phase 4: Task 2
 

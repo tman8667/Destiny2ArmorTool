@@ -75,14 +75,14 @@ public class JsonReader {
     // EFFECTS: parses an ArmorPiece from JSON object and adds it to set
     private void addPiece(ArmorSet set, JSONObject jsonObject) {
         String type = jsonObject.getString("type");
-        int mobility = jsonObject.getInt("mobility");
-        int resilience = jsonObject.getInt("resilience");
-        int recovery = jsonObject.getInt("recovery");
-        int intellect = jsonObject.getInt("intellect");
-        int discipline = jsonObject.getInt("discipline");
-        int strength = jsonObject.getInt("strength");
-        ArmorPiece armorPiece = new ArmorPiece(type, mobility, resilience, recovery,
-                intellect, discipline, strength);
+        int weapons = jsonObject.getInt("weapons");
+        int health = jsonObject.getInt("health");
+        int classability = jsonObject.getInt("class");
+        int superability = jsonObject.getInt("super");
+        int grenade = jsonObject.getInt("grenade");
+        int melee = jsonObject.getInt("melee");
+        ArmorPiece armorPiece = new ArmorPiece(type, weapons, health, classability,
+                superability, grenade, melee);
         set.addPiece(armorPiece);
     }
 }

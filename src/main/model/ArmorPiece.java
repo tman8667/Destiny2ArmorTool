@@ -3,30 +3,28 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
-import java.util.ArrayList;
-
 // Represents a single armor piece with a type and six stat values
 public class ArmorPiece implements Writable {
     private String type;
-    private int mobility;
-    private int resilience;
-    private int recovery;
-    private int intellect;
-    private int discipline;
-    private int strength;
+    private int weapons;
+    private int health;
+    private int classability;
+    private int superability;
+    private int grenade;
+    private int melee;
 
     // REQUIRES: all stat values must be between 0 and 40
     // MODIFIES: this
     // EFFECTS creates a new armor piece with given type and stat values
-    public ArmorPiece(String type, int mobility, int resilience, int recovery,
-                      int intellect, int discipline, int strength) {
+    public ArmorPiece(String type, int weapons, int health, int classability,
+                      int superability, int grenade, int melee) {
         this.type = type;
-        this.mobility = mobility;
-        this.resilience = resilience;
-        this.recovery = recovery;
-        this.intellect = intellect;
-        this.discipline = discipline;
-        this.strength = strength;
+        this.weapons = weapons;
+        this.health = health;
+        this.classability = classability;
+        this.superability = superability;
+        this.grenade = grenade;
+        this.melee = melee;
         EventLog.getInstance().logEvent(
                 new Event("Armor piece created with stat total: " + getStatTotal()));
     }
@@ -35,46 +33,46 @@ public class ArmorPiece implements Writable {
         return type;
     }
 
-    public int getMobility() {
-        return mobility;
+    public int getWeapons() {
+        return weapons;
     }
 
-    public int getResilience() {
-        return resilience;
+    public int getHealth() {
+        return health;
     }
 
-    public int getRecovery() {
-        return recovery;
+    public int getClassability() {
+        return classability;
     }
 
-    public int getIntellect() {
-        return intellect;
+    public int getSuperability() {
+        return superability;
     }
 
-    public int getDiscipline() {
-        return discipline;
+    public int getGrenade() {
+        return grenade;
     }
 
-    public int getStrength() {
-        return strength;
+    public int getMelee() {
+        return melee;
     }
 
     // EFFECTS: returns the total of all the stat values for this armor piece
     public int getStatTotal() {
-        return (getMobility() + getResilience() + getRecovery() + getIntellect()
-                + getDiscipline() + getStrength());
+        return (getWeapons() + getHealth() + getClassability() + getSuperability()
+                + getGrenade() + getMelee());
     }
 
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("type", type);
-        json.put("mobility", mobility);
-        json.put("resilience", resilience);
-        json.put("recovery", recovery);
-        json.put("intellect", intellect);
-        json.put("discipline", discipline);
-        json.put("strength", strength);
+        json.put("weapons", weapons);
+        json.put("health", health);
+        json.put("class", classability);
+        json.put("super", superability);
+        json.put("grenade", grenade);
+        json.put("melee", melee);
         return json;
     }
 }

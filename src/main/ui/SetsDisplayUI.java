@@ -18,12 +18,12 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     private ArmorToolUI armorToolUI;
     private JPanel thePanel;
     private JScrollPane scrollPane;
-    private static final Icon MOBILITY_ICON = new ImageIcon("./data/mobility.png");
-    private static final Icon RESILIENCE_ICON = new ImageIcon("./data/resilience.png");
-    private static final Icon RECOVERY_ICON = new ImageIcon("./data/recovery.png");
-    private static final Icon INTELLECT_ICON = new ImageIcon("./data/intellect.png");
-    private static final Icon DISCIPLINE_ICON = new ImageIcon("./data/discipline.png");
-    private static final Icon STRENGTH_ICON = new ImageIcon("./data/strength.png");
+    private static final Icon WEAPONS_ICON = new ImageIcon("./data/weapons.png"); // Old icon. Will change when available.
+    private static final Icon HEALTH_ICON = new ImageIcon("./data/health.png"); // Old icon. Will change when available.
+    private static final Icon CLASS_ICON = new ImageIcon("./data/class.png"); // Old icon. Will change when available.
+    private static final Icon SUPER_ICON = new ImageIcon("./data/super.png"); // Old icon. Will change when available.
+    private static final Icon GRENADE_ICON = new ImageIcon("./data/grenade.png");
+    private static final Icon MELEE_ICON = new ImageIcon("./data/melee.png");
     private static final Icon BLANK_ICON =
             new ImageIcon(new BufferedImage(1, 1,BufferedImage.TYPE_INT_ARGB));
 
@@ -82,10 +82,10 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
     // EFFECTS: creates a new table to display an armor set's stat totals
     private void createTable(ArmorSet s) {
         String[] columnNames = {"Stat", "Value"};
-        Object[][] data = {{BLANK_ICON, s.getName()}, {MOBILITY_ICON, addMobility(s)},
-                {RESILIENCE_ICON, addResilience(s)}, {RECOVERY_ICON, addRecovery(s)},
-                {INTELLECT_ICON, addIntellect(s)}, {DISCIPLINE_ICON, addDiscipline(s)},
-                {STRENGTH_ICON, addStrength(s)}};
+        Object[][] data = {{BLANK_ICON, s.getName()}, {WEAPONS_ICON, addWeapons(s)},
+                {HEALTH_ICON, addHealth(s)}, {CLASS_ICON, addClassability(s)},
+                {SUPER_ICON, addSuperability(s)}, {GRENADE_ICON, addGrenade(s)},
+                {MELEE_ICON, addMelee(s)}};
         DefaultTableModel model = new DefaultTableModel(data, columnNames) {
             public Class getColumnClass(int column) {
                 return getValueAt(0, column).getClass();
@@ -95,72 +95,73 @@ public class SetsDisplayUI extends JInternalFrame implements ActionListener {
         newTable.setRowHeight(100);
         newTable.setFont(new Font("Arial", Font.BOLD, 16));
         newTable.setPreferredSize(new Dimension(250, 850));
+        newTable.setEnabled(false);
         thePanel.add(newTable);
     }
 
-    // EFFECTS: adds all Mobility values of the set
-    private int addMobility(ArmorSet s) {
+    // EFFECTS: adds all Weapons values of the set
+    private int addWeapons(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getMobility();
-        total += s.getArms().get(0).getMobility();
-        total += s.getChest().get(0).getMobility();
-        total += s.getLegs().get(0).getMobility();
-        total += s.getClassItem().get(0).getMobility();
+        total += s.getHead().get(0).getWeapons();
+        total += s.getArms().get(0).getWeapons();
+        total += s.getChest().get(0).getWeapons();
+        total += s.getLegs().get(0).getWeapons();
+        total += s.getClassItem().get(0).getWeapons();
         return total;
     }
 
-    // EFFECTS: adds all Resilience values of the set
-    private int addResilience(ArmorSet s) {
+    // EFFECTS: adds all Health values of the set
+    private int addHealth(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getResilience();
-        total += s.getArms().get(0).getResilience();
-        total += s.getChest().get(0).getResilience();
-        total += s.getLegs().get(0).getResilience();
-        total += s.getClassItem().get(0).getResilience();
+        total += s.getHead().get(0).getHealth();
+        total += s.getArms().get(0).getHealth();
+        total += s.getChest().get(0).getHealth();
+        total += s.getLegs().get(0).getHealth();
+        total += s.getClassItem().get(0).getHealth();
         return total;
     }
 
-    // EFFECTS: adds all Recovery values of the set
-    private int addRecovery(ArmorSet s) {
+    // EFFECTS: adds all Class values of the set
+    private int addClassability(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getRecovery();
-        total += s.getArms().get(0).getRecovery();
-        total += s.getChest().get(0).getRecovery();
-        total += s.getLegs().get(0).getRecovery();
-        total += s.getClassItem().get(0).getRecovery();
+        total += s.getHead().get(0).getClassability();
+        total += s.getArms().get(0).getClassability();
+        total += s.getChest().get(0).getClassability();
+        total += s.getLegs().get(0).getClassability();
+        total += s.getClassItem().get(0).getClassability();
         return total;
     }
 
-    // EFFECTS: adds all Intellect values of the set
-    private int addIntellect(ArmorSet s) {
+    // EFFECTS: adds all Super values of the set
+    private int addSuperability(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getIntellect();
-        total += s.getArms().get(0).getIntellect();
-        total += s.getChest().get(0).getIntellect();
-        total += s.getLegs().get(0).getIntellect();
-        total += s.getClassItem().get(0).getIntellect();
+        total += s.getHead().get(0).getSuperability();
+        total += s.getArms().get(0).getSuperability();
+        total += s.getChest().get(0).getSuperability();
+        total += s.getLegs().get(0).getSuperability();
+        total += s.getClassItem().get(0).getSuperability();
         return total;
     }
 
-    // EFFECTS: adds all Discipline values of the set
-    private int addDiscipline(ArmorSet s) {
+    // EFFECTS: adds all Grenade values of the set
+    private int addGrenade(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getDiscipline();
-        total += s.getArms().get(0).getDiscipline();
-        total += s.getChest().get(0).getDiscipline();
-        total += s.getLegs().get(0).getDiscipline();
-        total += s.getClassItem().get(0).getDiscipline();
+        total += s.getHead().get(0).getGrenade();
+        total += s.getArms().get(0).getGrenade();
+        total += s.getChest().get(0).getGrenade();
+        total += s.getLegs().get(0).getGrenade();
+        total += s.getClassItem().get(0).getGrenade();
         return total;
     }
 
-    // EFFECTS: adds all Strength values of the set
-    private int addStrength(ArmorSet s) {
+    // EFFECTS: adds all Melee values of the set
+    private int addMelee(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getStrength();
-        total += s.getArms().get(0).getStrength();
-        total += s.getChest().get(0).getStrength();
-        total += s.getLegs().get(0).getStrength();
-        total += s.getClassItem().get(0).getStrength();
+        total += s.getHead().get(0).getMelee();
+        total += s.getArms().get(0).getMelee();
+        total += s.getChest().get(0).getMelee();
+        total += s.getLegs().get(0).getMelee();
+        total += s.getClassItem().get(0).getMelee();
         return total;
     }
 

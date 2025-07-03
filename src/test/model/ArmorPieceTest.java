@@ -10,12 +10,12 @@ public class ArmorPieceTest {
         ArmorPiece testArmor = new ArmorPiece("chest",
                 10, 10, 15, 21, 3, 8);
         assertEquals("chest", testArmor.getType());
-        assertEquals(10, testArmor.getMobility());
-        assertEquals(10, testArmor.getResilience());
-        assertEquals(15, testArmor.getRecovery());
-        assertEquals(21, testArmor.getIntellect());
-        assertEquals(3, testArmor.getDiscipline());
-        assertEquals(8, testArmor.getStrength());
+        assertEquals(10, testArmor.getWeapons());
+        assertEquals(10, testArmor.getHealth());
+        assertEquals(15, testArmor.getClassability());
+        assertEquals(21, testArmor.getSuperability());
+        assertEquals(3, testArmor.getGrenade());
+        assertEquals(8, testArmor.getMelee());
     }
 
     @Test

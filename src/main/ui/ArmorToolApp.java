@@ -202,66 +202,66 @@ public class ArmorToolApp {
     // EFFECTS: adds all Mobility values of the set
     private int addMobility(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getMobility();
-        total += s.getArms().get(0).getMobility();
-        total += s.getChest().get(0).getMobility();
-        total += s.getLegs().get(0).getMobility();
-        total += s.getClassItem().get(0).getMobility();
+        total += s.getHead().get(0).getWeapons();
+        total += s.getArms().get(0).getWeapons();
+        total += s.getChest().get(0).getWeapons();
+        total += s.getLegs().get(0).getWeapons();
+        total += s.getClassItem().get(0).getWeapons();
         return total;
     }
 
     // EFFECTS: adds all Resilience values of the set
     private int addResilience(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getResilience();
-        total += s.getArms().get(0).getResilience();
-        total += s.getChest().get(0).getResilience();
-        total += s.getLegs().get(0).getResilience();
-        total += s.getClassItem().get(0).getResilience();
+        total += s.getHead().get(0).getHealth();
+        total += s.getArms().get(0).getHealth();
+        total += s.getChest().get(0).getHealth();
+        total += s.getLegs().get(0).getHealth();
+        total += s.getClassItem().get(0).getHealth();
         return total;
     }
 
     // EFFECTS: adds all Recovery values of the set
     private int addRecovery(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getRecovery();
-        total += s.getArms().get(0).getRecovery();
-        total += s.getChest().get(0).getRecovery();
-        total += s.getLegs().get(0).getRecovery();
-        total += s.getClassItem().get(0).getRecovery();
+        total += s.getHead().get(0).getClassability();
+        total += s.getArms().get(0).getClassability();
+        total += s.getChest().get(0).getClassability();
+        total += s.getLegs().get(0).getClassability();
+        total += s.getClassItem().get(0).getClassability();
         return total;
     }
 
     // EFFECTS: adds all Intellect values of the set
     private int addIntellect(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getIntellect();
-        total += s.getArms().get(0).getIntellect();
-        total += s.getChest().get(0).getIntellect();
-        total += s.getLegs().get(0).getIntellect();
-        total += s.getClassItem().get(0).getIntellect();
+        total += s.getHead().get(0).getSuperability();
+        total += s.getArms().get(0).getSuperability();
+        total += s.getChest().get(0).getSuperability();
+        total += s.getLegs().get(0).getSuperability();
+        total += s.getClassItem().get(0).getSuperability();
         return total;
     }
 
     // EFFECTS: adds all Discipline values of the set
     private int addDiscipline(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getDiscipline();
-        total += s.getArms().get(0).getDiscipline();
-        total += s.getChest().get(0).getDiscipline();
-        total += s.getLegs().get(0).getDiscipline();
-        total += s.getClassItem().get(0).getDiscipline();
+        total += s.getHead().get(0).getGrenade();
+        total += s.getArms().get(0).getGrenade();
+        total += s.getChest().get(0).getGrenade();
+        total += s.getLegs().get(0).getGrenade();
+        total += s.getClassItem().get(0).getGrenade();
         return total;
     }
 
     // EFFECTS: adds all Strength values of the set
     private int addStrength(ArmorSet s) {
         int total = 0;
-        total += s.getHead().get(0).getStrength();
-        total += s.getArms().get(0).getStrength();
-        total += s.getChest().get(0).getStrength();
-        total += s.getLegs().get(0).getStrength();
-        total += s.getClassItem().get(0).getStrength();
+        total += s.getHead().get(0).getMelee();
+        total += s.getArms().get(0).getMelee();
+        total += s.getChest().get(0).getMelee();
+        total += s.getLegs().get(0).getMelee();
+        total += s.getClassItem().get(0).getMelee();
         return total;
     }
 
